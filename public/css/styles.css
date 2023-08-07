@@ -9,7 +9,7 @@
 }
 
 .container{
-    width: 40%;
+    width: 60%;
 }
 
 .btn {
@@ -22,7 +22,11 @@ a {
     color:var(--main-color);
 }
 
+body, html{
+    height: 100vh;
+}
 
+/* navbar */
 .navbar {
     padding-top: 15px;
     padding-bottom: 15px;
@@ -35,12 +39,14 @@ a {
     color: var(--main-color) !important;
 }
 
+/* footer */
+
 .footer-padding {
 	padding-bottom: 60px;
 }
 
 .footer {
-	position: absolute;
+    position: fixed;
 	text-align: center;
 	bottom: 0;
 	width: 100%;
@@ -54,28 +60,29 @@ a {
     color: #fff;
 }
 
-.publishDate{
-    color:grey;
-    font-size: 12px;
-}
 
-
+/* homepage  */
 .about-container{
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 40px;
     justify-content: center;
     align-items: center;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
+}
+
+.about-container p{
+    width: 60%;
+    text-align: center;
 }
 
 .project-container{
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 40px;
     justify-content: center;
     align-items: center;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 
 .projects{
@@ -83,18 +90,29 @@ a {
     grid-template-columns: 1fr 1fr;
     gap: 4rem
 }
-.project-pic {
-width: 100%;
-height: 60%;
+
+@media (max-width: 992px){
+    .projects{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
 }
 
-
+.project-pic {
+    width: 100%;
+    height: 60%;
+}
 
 .blog-container{
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 40px;
     justify-content: center;
     align-items: center;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
+}
+
+.publishDate{
+    color:grey;
+    font-size: 12px;
 }
