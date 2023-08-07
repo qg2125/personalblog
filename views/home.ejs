@@ -1,21 +1,51 @@
 <%- include( './partials/header.ejs' ); -%>
-<body>
-    <h1>Welcome to Cara's Journal</h1>
-    <p style="margin-bottom: 50px;"><%= showContent %></p>
-    
-    <div>
-    
-    <% showPost.forEach(post => { %> 
-        <h3><%= post.title %></h2> 
-        <p class="publishDate"> <%= post.time %> </p>
-        <p><%= post.content.substring(0,100)+" ... " %><a href="<%= `/posts/${post.id}` %>">Read more</a></p>
-        <form action="/" method="post">
-            <button type="submit" name="deleteBtn" value="<%= post._id %>" class="btn btn-primary">Delete</button>
-        </form>
-        <hr>
-    <% }) %>
-    
+
+    <div class="about-container">
+        <h1>About Me</h1>
+        <img src="../img/profile.png" alt="profile imgage" style="border-radius: 50%; width: 200px; height: 200px;" ></img>
+    </div>    
+
+    <div class="project-container">
+        <h1 style="text-align: center;">Some of my recent projects</h1>
+        <div class="projects">
+            <div class="project-card">
+                <img src="../img/AWDPI-old.png" alt="expense-tracker" loading="lazy" class="project-pic" />
+                <h3 class="project-title">AWDPI Website (old)</h3>
+                <p class="project-details">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas
+                    ratione vel inventore labore commodi modi quos culpa aut saepe!
+                    Alias!
+                </p>
+                <a href="https://awdpi.org/" target="_blank" class="project-link">Check it Out</a>
+            </div>
+            <div class="project-card">
+                <img src="../img/AWDPI-new.png" alt="netflic-clone" loading="lazy" class="project-pic" />
+                <h3 class="project-title">AWDPI Website (new)</h3>
+                <p class="project-details">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas
+                    ratione vel inventore labore commodi modi quos culpa aut saepe!
+                    Alias!
+                </p>
+                <a href="https://awdpi.vercel.app/en" target="_blank" class="project-link">Check it Out</a>
+            </div>
+        
+        </div>
     </div>
 
-</body>
-<%- include( './partials/footer.ejs' ); -%>
+    <div class="blog-container">
+        <h1 style="text-align: center;">My blogs</h1>
+        <div>
+            <% showPost.forEach(post => { %> 
+                <h4><%= post.title %></h4> 
+                <p class="publishDate">   <%= post.time %> </p>
+                <!-- <form action="/" method="post">
+                    <button type="submit" name="deleteBtn" value="<%= post._id %>" class="btn btn-primary">Delete</button>
+                </form> -->
+                <p><%= post.content.substring(0,100)+" ... " %><a href="<%= `/posts/${post.id}` %>">Read more</a></p>
+                <hr>
+            <% }) %>
+        </div>
+    </div>
+
+
+
