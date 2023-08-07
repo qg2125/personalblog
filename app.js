@@ -3,6 +3,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import _ from 'lodash';
 import mongoose from 'mongoose';
+import 'dotenv/config'
 
 
 const homeStartingContent = "This website demonstrates Cara's projects and notes for learning coding. ";
@@ -19,7 +20,7 @@ app.use(express.static("public"));
 
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect("mongodb+srv://qg2125:Svea0124@cluster0.po4ozzu.mongodb.net/blogDB");
+    const conn = await mongoose.connect(`mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@cluster0.po4ozzu.mongodb.net/blogDB`);
     console.log(`MongoDB Connected: ${conn.connection.host}`);
   } catch (error) {
     console.log(error);
