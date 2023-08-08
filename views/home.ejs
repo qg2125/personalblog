@@ -43,7 +43,7 @@
                 <!-- <form action="/" method="post">
                     <button type="submit" name="deleteBtn" value="<%= post._id %>" class="btn btn-primary">Delete</button>
                 </form> -->
-                <p><%= post.content.substring(0,100)+" ... " %><a href="<%= `/posts/${post.id}` %>">Read more</a></p>
+                <p><%= post.content.substring(0,200)+" ... " %><a href="<%= `/posts/${post.id}` %>">Read more</a></p>
                 <hr>
             <% }) %>
         </div>
