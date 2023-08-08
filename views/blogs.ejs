@@ -1,0 +1,14 @@
+<%- include( './partials/header.ejs' ); -%>
+<body>
+    <h1 style="margin-bottom: 50px;">Cara's blogs</h1>
+    <div >
+        <div>
+            <% showPost.forEach(post => { %> 
+                <h3><%= post.title %></h3> 
+                <p class="publishDate">   <%= post.time %>  <a href="<%= `/posts/${post.id}` %>" style="margin-left: 20px;"> Read full article</a></p>
+                <hr>
+            <% }) %>
+        </div>
+    </div>
+</body>
+<%- include( './partials/footer.ejs' ); -%>

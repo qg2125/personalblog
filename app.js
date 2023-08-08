@@ -48,8 +48,9 @@ app.get("/about", (req, res)=>{
   res.render("about.ejs", {showContent: aboutContent})
 })
 
-app.get("/projects", (req, res)=>{
-  res.render("projects.ejs")
+app.get("/blogs", async(req, res)=>{
+  const allBlogs = await Blog.find()
+  res.render("blogs.ejs", {showPost: allBlogs})
 })
 
 app.get("/compose", (req, res)=>{
